@@ -1,0 +1,349 @@
+1)second lardest and second smallest
+#include <stdio.h>
+
+int main()
+{
+     int size,init,temp,count=0,result;
+    scanf("%d ",&size);
+    int arr[size];
+    for(init=0;init<size;init++)
+    scanf("%d",&arr[init]);
+    for(init=0;init<size;init++)
+    {
+        for(int j=init+1;j<size;j++)
+        {
+            if(arr[init]>arr[j])
+            {
+                temp=arr[init];
+                arr[init]=arr[j];
+                arr[j]=temp;
+            }
+       }
+    }
+   for(init=0;init<size;init++)
+    printf("%d ",arr[init]);
+   printf("\n%d is second largest",arr[size-2]);
+   printf("\n%d is second smallest",arr[1]);
+}
+
+2)Remove duplicate
+#include <stdio.h>
+
+int main()
+{
+     int size,init,temp,count=0,result;
+    scanf("%d ",&size);
+    int arr[size];
+    for(init=0;init<size;init++)
+    scanf("%d",&arr[init]);
+    for(init=0;init<size;init++)
+    {
+        for(int j=init+1;j<size;j++)
+        {
+            if(arr[init]==arr[j])
+            {
+        
+              for(int k=init;k<size;k++)
+                {
+                arr[k]=arr[k+1];
+                count+=1;
+                }
+            }
+        }
+    }
+    
+    for(init=0;init<size;init++)
+    printf("%d ",arr[init]);
+}
+3)element is sorted or not
+#include <stdio.h>
+
+int main()
+{
+   int size,init,count=0;
+   scanf("%d ",&size);
+   int arr[size];
+   for(init=0;init<size;init++)
+   scanf("%d",&arr[init]);
+   for(init=0;init<size;init++)
+   {
+      
+       for(int j=init+1;j<size;j++)
+       {
+           if(arr[init]>arr[j])
+           count+=1;
+       }
+   }
+   if(count==0)
+   printf("true");
+   else
+   printf("false");
+   
+}
+4)pair of adjacent element
+#include <stdio.h>
+
+int main()
+{
+   int size,init,temp,j;
+   scanf("%d ",&size);
+   int arr[size];
+   for(init=0;init<size;init++)
+   scanf("%d",&arr[init]);
+   for(init=0;init<size;init++)
+   {
+       int var;
+      var=init+1;
+       if(var%2==0)
+       {
+           
+           temp=arr[init-1];
+           arr[init-1]=arr[init];
+           arr[init]=temp;
+       }
+   }
+    for(init=0;init<size;init++)
+    printf("%d ",arr[init]);
+}
+5)deletion
+#include <stdio.h>
+
+int main()
+{
+   int size,init,value,temp;
+    scanf("%d ",&size);
+    scanf("%d ",&value);
+    int arr[size];
+    for(init=0;init<size;init++)
+    {
+    scanf("%d",&arr[init]);
+    }
+    for(init=0;init<size;init++)
+    {
+        if(arr[init]==value)
+
+            temp=init;
+    }
+    for(int j=temp;j<size;j++)
+    arr[j]=arr[j+1];
+    for(init=0;init<size-1;init++)
+    printf("%d ",arr[init]);
+
+
+return 0;
+}
+6)left rotate
+#include <stdio.h>
+
+int main()
+{
+    int size,rotation,init,temp,temp1;
+    scanf("%d ",&size);
+    scanf("%d ",&rotation);
+    int arr[size];
+    for(init=0;init<size;init++)
+    scanf("%d",&arr[init]);
+    while(rotation>0)
+    {
+        temp1=arr[size-1];
+       
+        for(int j=size-1;j>0;j--)
+        {
+            temp=arr[j];
+            arr[j]=arr[j-1];
+            arr[j-1]=arr[j];
+        }
+       arr[0]=temp1;
+       rotation--;
+    }
+    for(init=0;init<size;init++)
+    printf("%d ",arr[init]);
+}
+7)insertion
+#include <stdio.h>
+
+int main()
+{
+    int size,init,position,value,temp;
+    scanf("%d ",&size);
+    int arr[size];
+    for(init=0;init<size-1;init++)
+    scanf("%d",&arr[init]);
+    scanf("%d",&position);
+    scanf("%d",&value);
+    for(init=size-2;init>=position;init--)
+    {
+        temp=arr[init];
+        arr[init]=arr[init+1];
+        arr[init+1]=temp;
+        
+    }
+    for(init=0;init<size;init++)
+    {
+        if(init==position)
+        arr[init]=value;
+    }
+    for(init=0;init<size;init++)
+    printf("%d ",arr[init]);
+}
+
+8)reverse by swapping
+#include <stdio.h>
+
+int main()
+{
+    
+    int size,init,temp,end;
+    scanf("%d ",&size);
+    int arr[size];
+    for(init=0;init<size;init++)
+    scanf("%d",&arr[init]);
+    for(init=0,end=size-1;init<size/2;init++,end--)
+    {
+        temp=arr[init];
+                arr[init]=arr[end];
+                arr[end]=temp;
+    }
+    for(init=0;init<size;init++)
+    printf("%d ",arr[init]);
+}
+9)sum of right side elements
+int main()
+{
+    int size,init;
+    scanf("%d ",&size);
+    int arr[size];
+    for(init=0;init<size;init++)
+    scanf("%d",&arr[init]);
+    for(init=0;init<size;init++)
+    {
+        int temp=0;
+        for(int j=init+1;j<size;j++)
+        {
+            temp+=arr[j];
+        }
+        arr[init]=temp;
+        printf("%d ",arr[init]);
+    }
+   // for(init=0;init,size;init++)
+    
+}
+10)counting 0s 1s
+#include <stdio.h>
+
+int main()
+{
+    
+    int size,init,count=0;
+    scanf("%d ",&size);
+    int arr[size];
+    for(init=0;init<size;init++)
+    scanf("%d",&arr[init]);
+    for(init=0;init<size;init++)
+    {
+    if(arr[init]==0)
+    count+=1;
+    }
+    printf("%d %d",count,size-count);
+}
+11)segregate 0s 1s
+#include <stdio.h>
+
+int main()
+{
+    int size,init,temp,count=0,var;
+  scanf("%d ",&size);
+  int arr[size];
+  for(init=0;init<size;init++)
+  scanf("%d",&arr[init]);
+  //var=arr[init];
+  for( init=0;init<size;init++)
+  {
+      for(int j=init+1;j<size;j++)
+      {
+      if(arr[init]>arr[j])
+      {
+      temp=arr[init];
+      arr[init]=arr[j];
+      arr[j]=temp;
+      }
+      }
+  }
+ for(init=0;init<size;init++)
+ printf("%d",arr[init]);
+}
+12)searching element
+int main()
+{
+    int size,init,key,count=0,flag=0;
+  scanf("%d ",&size);
+  int arr[size];
+  for(init=0;init<size;init++)
+  scanf("%d",&arr[init]);
+  scanf("%d",&key);
+  for( init=0;init<size;init++)
+  {
+      if(arr[init]==key)
+     printf("%d",arr[init]);
+    else
+    flag=1;
+  }
+  if(flag==1)
+  printf("-1");
+  
+}
+13)elements which is less than key
+#include <stdio.h>
+
+int main()
+{
+  int size,init,key,count=0;
+  scanf("%d ",&size);
+  int arr[size];
+  for(init=0;init<size;init++)
+  scanf("%d",&arr[init]);
+  scanf("%d",&key);
+  for( init=0;init<size;init++)
+  {
+      if(arr[init]<key)
+      count+=1;
+  }
+  printf("%d ",count);
+}
+
+14)same elements printing
+#include <stdio.h>
+
+int main()
+{
+    
+    int size,init;
+    scanf("%d ",&size);
+    int arr[size];
+    for(init=0;init<size;init++)
+    scanf("%d",&arr[init]);
+    for(init=0;init<size;init++)
+    {
+        for(int j=init+1;j<size;j++)
+        {
+            if(arr[init]==arr[j])
+            printf("%d ",arr[init]);
+        }
+    }
+}
+15)display array reverse
+#include <stdio.h>
+
+int main()
+{
+    int size,init;
+    scanf("%d",&size);
+    int arr[size];
+    for(init=0;init<size;init++)
+    scanf("%d",&arr[init]);
+    for(init=size-1;init>1;init--)
+    printf("%d\t",arr[init]);
+
+    return 0;
+}
+
