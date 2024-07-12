@@ -1,0 +1,39 @@
+prime
+  #include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+    int num1,num2;
+    scanf("%d ",&num1);
+    scanf("%d",&num2);
+    while(num1<=num2)
+    {   
+        int count=0,j=2;
+        while(j<num1)
+        {
+            if(num1%j==0)
+            {
+                count=1;
+            }
+            j++;
+        }
+        if(count==0)
+        {
+            if(num1!=1)
+            {
+           if(num1%1==0)
+           {
+               if(num1%num1==0)
+                 printf("%d ",num1);
+           }
+            }
+        }
+        num1++;
+    }
+    
+    return 0;
+}
