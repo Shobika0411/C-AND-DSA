@@ -1,0 +1,32 @@
+1)Salary-leave
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    int salary,leave,perday=833,minus,result;
+    scanf("%d %d",&salary,&leave);
+    minus=leave*perday;
+    result=salary-minus;
+    printf("%d",result);
+    return 0;
+}
+2)W newspaper
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */ 
+    int w,x,y,profit,fixedcost=100,agency;
+    scanf("%d /n %d /n %d",&w,&x,&y);
+    agency=w;
+    profit=agency-fixedcost;
+    printf("%d",profit);
+    return 0;
+}
