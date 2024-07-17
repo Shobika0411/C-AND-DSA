@@ -1,0 +1,90 @@
+1)Trading array
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */ 
+    int size,init,divisor,count=0,result;
+    scanf("%d ",&size);
+    scanf("%d ",&divisor);
+    int arr[size];
+    for(init=0;init<size;init++)
+        scanf("%d",&arr[init]);
+    for(init=0;init<size;init++)
+    {
+        for(int j=init+1;j<size;j++)
+        {
+            result=arr[init]+arr[j];
+            if(result%divisor==0)
+                count+=1;
+        }
+    }
+    printf("%d ",count);
+    return 0;
+}
+2)Rotation of array
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */ 
+     int n,rot,i,temp,j;
+    scanf("%d",&n);
+    int a[n];
+    scanf("%d",&rot);
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+   
+    for(j=0;j<rot;j++)
+    {
+         temp=a[n-1];
+        for(i=n-1;i>0;i--)
+        {
+            a[i]=a[i-1];
+        }
+        a[0]=temp;
+    }
+    for(i=0;i<n;i++)
+    {
+        printf("%d ",a[i]);
+    }return 0;
+}
+3)Kth largest
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    int size,init,kth,temp;
+    scanf("%d ",&size);
+    scanf("%d ",&kth);
+    int arr[size];
+    for(init=0;init<size;init++)
+        scanf("%d",&arr[init]);
+   for( init=0;init<size;init++)
+  {
+      for(int j=init+1;j<size;j++)
+      {
+      if(arr[init]>arr[j])
+      {
+      temp=arr[init];
+      arr[init]=arr[j];
+      arr[j]=temp;
+      }
+      }
+  }
+    
+        printf("%d ",arr[size-kth]);
+    return 0;
+}
