@@ -1,0 +1,42 @@
+1)Character check
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+    char ch;
+    scanf("%c ",&ch);
+    if(ch>='a'&&ch<='z')
+        printf("%c is lowercase letter",ch);
+    else 
+        printf("%c is uppercase letter",ch); 
+    
+    return 0;
+}
+2)Occurance of character in string
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */ 
+    char ch;
+    scanf("%c",&ch);
+    char str[50];
+    fgets(str,sizeof(str),stdin);
+    int count=0;
+    //char alphabet[123]={0};
+    for(int init=0;str[init]!='\0';init++)
+    {
+   if(ch==str[init])
+       count+=1;
+        } 
+    printf("%d",count);
+    return 0;
+}
+
