@@ -1,0 +1,88 @@
+1)Array 2D
+ #include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+    int n,row,col;
+    scanf("%d",&n);
+        int a[n][n];
+    int row_sum[3] = {0};
+    int max_sum = 0;
+    for(row=0;row<n;row++){
+        for(col=0;col<n;col++){
+            scanf("%d",&a[row][col]);
+        }
+    }
+
+    /* Calculate sum of each row */
+    for (row = 0; row < n; row++) {
+        for (col = 0; col < n; col++) {
+            row_sum[row] += a[row][col];
+        }
+        if (row_sum[row] > max_sum) {
+            max_sum = row_sum[row];
+        }
+    }
+
+    printf("%d\n", max_sum);
+
+    return 0;
+}
+2)Occurance of element
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */  
+     int n,i,j,count=0;
+    scanf("%d",&n);
+    int a[n];
+    for(i=0;i<n;i++){
+        scanf("%d",&a[i]);
+    }
+    for(i=0;i<n;i++){
+        for(j=i+1;j<n;j++){
+            if(a[i]==a[j]){
+                count=a[i];
+            }
+        }
+    }
+    printf("%d",count);
+    return 0;
+}
+3)Arranging the balls
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */ 
+     int n,i,j,temp;
+    scanf("%d",&n);
+    int a[n];
+    for(i=0;i<n;i++){
+        scanf("%d",&a[i]);
+    }
+    for(i=0;i<n;i++){
+        for(j=i+1;j<n;j++){
+            if(a[i]>a[j]){
+               temp=a[i];
+                a[i]=a[j];
+                a[j]=temp;
+            }
+        }
+    }
+    for(i=0;i<n;i++){
+        printf("%d ",a[i]);
+    }
+  
+    return 0;
+}
